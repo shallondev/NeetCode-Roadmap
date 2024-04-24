@@ -16,3 +16,19 @@ class Solution:
             seen.add(num)
         
         return False
+
+"""
+Solution 2: Sorting
+Time: O(nlogn) - sorting a array takes nlogn time (think merge sort)
+Space: O(1)
+Idea: sort the array then check two values at a time if they are the same return True.
+"""
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        nums.sort()
+        
+        for i in range(1,len(nums)):
+            if nums[i-1] == nums[i]:
+                return True
+        
+        return False
